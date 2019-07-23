@@ -15,17 +15,31 @@
 
 		public function get($data){
 			
-			$this->db->where('email',$data['email']);
-			$this->db->where('password',$data['password']);
+			
 
+			$this->db->where('email',$data['email']);
 			$query = $this->db->get('profile');
 			$result = $query->result();
 			
+
+
 			if($result){
-				return true;
+				$this->db->where('email',$data['email']);
+				$this->db->where('password',$data['password']);
+				$query2 = $this->db->get('profile');
+				$result2 = $query2->result();
+				
+				if($result2){
+					return $result;
+				}else{
+					return 'incorrect password';
+				}
+
 			}else{
-				return false;
+				return 'no email';
 			}
+
+
 			
 		}
 
