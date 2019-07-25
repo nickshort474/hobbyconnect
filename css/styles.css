@@ -11,13 +11,14 @@ body{
 }
 
 h1 {
+	display:inline;
 	color: #444;
 	background-color: transparent;
 	border-bottom: 1px solid #D0D0D0;
 	font-size: 25px;
 	font-weight: normal;
 	margin: 0 0 14px 0;
-	padding: 14px 15px 10px 15px;
+	padding: 14px 15px 10px 15px; 
 	text-align:center;
 }
 
@@ -32,6 +33,15 @@ h2 {
 	padding: 14px 15px 10px 15px;
 	text-align:center;
 }
+
+.header{
+	text-align:center;
+}
+
+.authButtons{
+	/* float:right; */
+}
+
 
 .container {
 	flex: 1 0 auto;
@@ -67,4 +77,17 @@ a:hover{
 .signinError{
 	text-align:center;
 	color:red;
+}
+
+.hobbyDropdown{
+	color:red;
+}
+
+#map{
+	height:350px;
+}
+
+
+.userBox{
+	border:1px solid black;
 }

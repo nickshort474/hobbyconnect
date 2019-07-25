@@ -6,6 +6,6 @@
 	}
 	echo ' you are signed in</div>';
 	
-	//echo $signin;
+	
 	
 ?>

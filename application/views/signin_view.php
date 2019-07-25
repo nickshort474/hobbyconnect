@@ -1,4 +1,7 @@
 <?php
+
+	$this->output->delete_cache();
+
 	echo '<h2>Please sign in</h2>';
 	if(isset($error)){
 		echo "<div class='signinError'>" . $error . "</div><br />";
@@ -6,7 +9,7 @@
 
 	echo '<div class="form content">';
 
-	echo form_open('Sign_in_controller/signin');
+	echo form_open('Authentication_controller/signin');
 	
 	
 	echo form_label('Email');
