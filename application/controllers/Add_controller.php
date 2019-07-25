@@ -4,9 +4,6 @@
 
 		function __construct(){
 			parent::__construct();
-			$this->load->helper('url');
-			$this->load->library('session');
-			$this->load->helper('form');
 			$this->load->database();
 		}
 

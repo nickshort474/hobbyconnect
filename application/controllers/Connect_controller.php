@@ -6,13 +6,8 @@
 
 		function __construct(){
 			parent::__construct();
-			$this->load->helper('url');
-			$this->load->library('session');
-			$this->load->helper('form');
 			$this->load->database();
 
-			//$this->output->cache(20);
-			
 		}
 
 		public function index(){
@@ -21,14 +16,13 @@
 			$result['hobbies'] = $query->result();
 
 			$this->load->view('header_view');
-			$this->load->view('connect_view',$result);
+			$this->load->view('hobby_list_view',$result);
 			$this->load->view('footer_view');
 		}
 
 		public function get_locations(){
-			$hobby = $this->input->post('Hobby');
-
 			
+			$hobby = $this->input->post('Hobby');
 
 			if(isset($hobby) == FALSE){
 				$hobby = $this->session->userdata('current_hobby');
@@ -43,7 +37,7 @@
 			$result['locations'] = $query->result();
 
 			$this->load->view('header_view');
-			$this->load->view('connects_view',$result);
+			$this->load->view('locations_view',$result);
 			$this->load->view('footer_view');
 		}
 
@@ -62,10 +56,16 @@
 			$this->load->view('footer_view');
 		}
 
-		public function Show_user(){
+
+
+		public function show_user(){
 			$this->load->view('header_view');
 			$this->load->view('user_profile_view');
 			$this->load->view('footer_view');
+		}
+
+		public function send_request(){
+
 		}
 
 	}

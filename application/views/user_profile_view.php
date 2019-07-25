@@ -10,6 +10,6 @@
 
 
 ?>
-<a href="<?php echo base_url() ?>index.php/Connect_controller/send_request" class="btn btn-primary">Send connection request</a>
+<a href="<?php echo base_url() ?>index.php/Request_controller" class="btn btn-primary">Send connection request</a>
    
 </div>

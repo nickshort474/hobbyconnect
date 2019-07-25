@@ -5,13 +5,10 @@
 		function __construct(){
 			parent::__construct();
 			$this->load->database();
-			$this->load->helper('url');
-			$this->load->library('session');
 		}
 
 		public function index(){
 			
-			$this->load->helper('form');
 			$this->load->view('header_view');
 			$this->load->view('create_profile_view');
 			$this->load->view('footer_view');

@@ -5,10 +5,6 @@
 		function __construct(){
 			parent::__construct();
 			$this->load->database();
-			$this->load->library('session');
-			$this->load->helper('url');
-			$this->load->helper('form');
-			
 		}
 
 		public function index(){
@@ -58,8 +54,6 @@
 
 		public function startSession($return){
 			
-			
-			
 			foreach ($return['signin'] as $row) {
 				$newdata = array(
         			'username'  => $row->username,
@@ -69,8 +63,6 @@
        				'logged_in' => TRUE
 				);
 			}
-
-			
 
 			$this->session->set_userdata($newdata);
 
