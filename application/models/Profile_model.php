@@ -39,8 +39,18 @@
 				return 'no email';
 			}
 
+		}
+
+		public function insertImage($imageSrc){
+
+			$data = array(
+
+				"profileImageSrc" =>  $imageSrc
+			);
 
 			
+			$this->db->where('userID', $this->session->userdata('userID'));
+			$this->db->update('profile',$data);
 		}
 
 	}

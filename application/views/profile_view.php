@@ -23,6 +23,21 @@
 	
 	echo form_submit(array('id'=>'update','value'=>'Update','class'=>'btn btn-primary', 'disabled'));
 
-	echo '</div>'
+	echo '</div>';
+	echo '<div class="content">';
+
+
+	if(null !== $this->session->userdata('profileImageSrc')){
+		echo '<img src="' . base_url() . 'uploads/' . $this->session->userdata("profileImageSrc") . '" class="profileImage" /><br />';
+	}
+
 
 ?>
+
+
+
+
+
+
+	<a href="<?php echo base_url() ?>index.php/Image_controller" class="btn btn-primary">Upload new picture</a>
+</div>

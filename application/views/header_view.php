@@ -8,7 +8,7 @@
 		<script type="text/javascript" src="<?php echo base_url(); ?>js/jquery-3.4.1.min.js"></script>
 		
 		<script type="text/javascript" src="<?php echo base_url(); ?>js/bootstrap.bundle.min.js"></script>
-		<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZDAHxx3voCpSRMm1slo0JB3CLaVbWhk0&callback=initMap" async defer></script> -->
+		
 
 	</head>
 	<body>
