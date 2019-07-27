@@ -7,7 +7,7 @@
 		function __construct(){
 			parent::__construct();
 			$this->load->database();
-
+			$this->load->model('Connect_model');
 		}
 
 		public function index(){
@@ -48,7 +48,7 @@
 
 			$this->session->set_userdata('current_location', $location);
 
-			$this->load->model('Connect_model');
+			
 
 			$result['profile_list'] = $this->Connect_model->get_ids($location);
 
@@ -70,9 +70,14 @@
 
 
 
-		public function show_user(){
+		public function show_user($id){
+
+			
+
+			$result['profileData'] = $this->Connect_model->get_individual_profile($id);
+
 			$this->load->view('header_view');
-			$this->load->view('user_profile_view');
+			$this->load->view('user_profile_view',$result);
 			$this->load->view('footer_view');
 		}
 

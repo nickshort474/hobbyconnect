@@ -36,6 +36,10 @@
 			if($this->Profile_model->insert($data)){
 				
 				/* Save userID and their location to the listed hobby table */
+				$this->Profile_model->insertIntoHobby($this->input->post('username'), $this->input->post('general_location'),$this->input->post('hobby') );
+
+				$data['logged_in'] = TRUE;
+				$this->session->set_userdata($data);
 
 
 				$this->load->view('header_view');

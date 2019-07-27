@@ -61,7 +61,7 @@ $route['signin'] = 'Authentication_controller';
 $route['signout'] = 'Authentication_controller/sign_out';
 
 $route['connect'] = 'Connect_controller';
-$route['Show_user/:num'] = 'Connect_controller/Show_user';
+$route['show_user'] = 'Connect_controller/show_user';
 
 
 $route['add'] = 'Add_controller';

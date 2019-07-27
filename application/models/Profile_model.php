@@ -41,6 +41,26 @@
 
 		}
 
+		public function insertIntoHobby($username,$location,$hobby){
+
+			$this->db->where('username', $username);
+			$query = $this->db->get('profile');
+			$result = $query->result();
+			
+			foreach($result as $row){
+				$userID = $row->userID;
+			}
+
+			$data = array(
+				'userID' => $userID,
+				'location' => $location
+			);
+
+			$this->db->insert($hobby,$data);
+
+		}
+
+
 		public function insertImage($imageSrc){
 
 			$data = array(

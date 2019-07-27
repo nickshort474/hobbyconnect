@@ -14,7 +14,7 @@
 			echo '<div class="userBox">';
 			echo '<p>User name: ' . $user->username . '</p>';
 			echo '<p>Location: ' .$user->general_location . '</p>';
-			echo '<a href="' . base_url() . 'index.php/Show_user/' . $user->userID . '" class="btn btn-primary">Show users profile</a>';
+			echo '<a href="' . base_url() . 'index.php/Connect_controller/show_user/' . $user->userID . '" class="btn btn-primary">Show users profile</a>';
 			echo '</div>';
 		}
 		

@@ -63,7 +63,7 @@
         			'userID' => $row->userID,
         			'profileImageSrc' => $row->profileImageSrc,
         			'general_location' => $row->general_location,
-        			'hobby' => $row => $row->hobby,
+        			'hobby' => $row->hobby,
        				'logged_in' => TRUE
 				);
 			}
