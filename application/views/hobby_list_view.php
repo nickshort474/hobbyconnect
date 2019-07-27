@@ -6,7 +6,7 @@
 <?php
 
 	$hobbiesArray = array();
-	$locationsArray = array();
+	
 
 	if(isset($hobbies)){
 		foreach($hobbies as $hobby){
@@ -26,7 +26,7 @@
 
 	echo form_open('Connect_controller/get_locations');
 	echo form_label('Hobby');
-	echo form_dropdown('Hobby', $hobbiesArray, 'large',$dropDown);
+	echo form_dropdown('Hobby', $hobbiesArray, 'large', $dropDown);
 
 	
 

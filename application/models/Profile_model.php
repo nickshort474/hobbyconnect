@@ -53,5 +53,14 @@
 			$this->db->update('profile',$data);
 		}
 
+		public function update($data){
+
+			$this->db->where('userID', $this->session->userdata('userID'));
+
+			if($this->db->update('profile',$data)){
+				return true;
+			}
+		}
+
 	}
 ?>

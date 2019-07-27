@@ -17,7 +17,7 @@
 
 
 		public function signin(){
-			$this->output->delete_cache();
+			
 			$this->load->model('Profile_model');
 
 			$data = array(
@@ -62,6 +62,8 @@
         			'last_name' => $row->last_name,
         			'userID' => $row->userID,
         			'profileImageSrc' => $row->profileImageSrc,
+        			'general_location' => $row->general_location,
+        			'hobby' => $row => $row->hobby,
        				'logged_in' => TRUE
 				);
 			}

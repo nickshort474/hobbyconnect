@@ -41,15 +41,27 @@
 			$this->load->view('footer_view');
 		}
 
+
+
 		public function show_people(){
 			$location = $this->input->post('Locations');
 
 			$this->session->set_userdata('current_location', $location);
 
-			$this->db->where('location', $location);
+			$this->load->model('Connect_model');
+
+			$result['profile_list'] = $this->Connect_model->get_ids($location);
+
+			/*foreach($ids as $id){
+				array_push($profileArray, $id );
+				array_push($profileArray, $this->Connect_model->get_profile($id->userID));
+			}*/
+
+
+			/*$this->db->where('location', $location);
 			$query = $this->db->get($this->session->userdata('current_hobby'));
 
-			$result['people'] = $query->result();
+			$result['people'] = $query->result();*/
 
 			$this->load->view('header_view');
 			$this->load->view('people_view',$result);
