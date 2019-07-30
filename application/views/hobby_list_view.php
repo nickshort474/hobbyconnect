@@ -30,7 +30,7 @@
 
 	
 
-	echo form_submit(array('id'=>'submit','value'=>'Search this hobby','class'=>'btn btn-primary'));
+	echo form_submit(array('id'=>'submit','value'=>'Search this hobby','class'=>'btn btn-dark'));
 	echo form_close();
 
 ?>

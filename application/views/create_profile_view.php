@@ -32,12 +32,16 @@
 	echo form_label('Email');
 	echo form_input(array('id'=>'email','name'=>'email','class'=>'form-control'));
 	echo '<br />';
-	echo form_label('password');
+	echo form_label('Password');
 	echo form_input(array('id'=>'password','name'=>'password','class'=>'form-control'));
 	echo '<br />';
 	echo form_label('General Location');
 	echo form_input(array('id'=>'general_location','name'=>'general_location','class'=>'form-control'));
 	echo '<br />';
+	echo form_label('About you');
+	echo form_textarea(array('id'=>'about_you','name'=>'about_you','class'=>'form-control', 'rows'=>'4'));
+	echo '<br />';
+
 	echo form_label('Hobby');
 	echo form_dropdown('hobby', $hobbiesArray, 'surfing',$dropDown);
 	echo '<br />';

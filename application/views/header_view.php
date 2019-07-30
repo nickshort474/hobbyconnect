@@ -6,51 +6,36 @@
 		<link rel="stylesheet" type ="text/css"  href="<?php echo base_url(); ?>css/bootstrap.min.css" />
 		<link rel="stylesheet" type ="text/css"  href="<?php echo base_url(); ?>css/styles.css" />
 		<script type="text/javascript" src="<?php echo base_url(); ?>js/jquery-3.4.1.min.js"></script>
-		
+		<link rel="stylesheet" type ="text/css"  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 		<script type="text/javascript" src="<?php echo base_url(); ?>js/bootstrap.bundle.min.js"></script>
-		
+
 
 	</head>
 	<body>
-	<div class="header">
-		<!-- <h1><a href="<?php echo base_url(); ?>" />HobbyConnect</a></h1>
-		<div class="authButtons">
-		
-		</div> -->
-	
-		<nav class="navbar navbar-expand-md bg-dark navbar-dark d-flex">
-		  	<!-- Brand -->
-			<a class="navbar-brand" href="<?php echo base_url(); ?>">HobbyConnect</a>
+	<div id="sideNav" class="sideNav">
+	   	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  	<!-- <a href="#">About</a>
+	  		 	<a href="#">Services</a>
+	  	<a href="#">Clients</a>
+	  	<a href="#">Contact</a> -->
+		<?php 
+			if($this->session->logged_in == 1){
+				
 
-		  	<!-- Toggler/collapsibe Button -->
-		  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-		    	<span class="navbar-toggler-icon"></span>
-		 	</button>
-
-		  	<!-- Navbar links -->
-		  	<div class="collapse navbar-collapse mr-auto" id="collapsibleNavbar">
-		    	<ul class="navbar-nav">
-		      	
-					<?php 
-						if($this->session->logged_in){
-							
-
-							echo '<li class="nav-item"><a class="nav-link" href="' . base_url() . 'index.php/show_profile">Show Profile</a></li>
-							<li class="nav-item"><a class="nav-link" href="' . base_url() . 'index.php/connect">Connect</a></li>
-							<li class="nav-item"><a class="nav-link" href="' . base_url() . 'index.php/signout">Sign out</a></li>';
-						}else{
-							
-							echo '<li class="nav-item"><a class="nav-link" href="' . base_url() . 'index.php/create_profile">Create Profile</a></li>
-							<li class="nav-item"><a class="nav-link" href="' . base_url() . 'index.php/signin">Sign in</a></li>';
-						}
-					?>
+				echo '<li class="nav-item"><a class="nav-link" href="' . base_url() . 'index.php/show_profile">Show Profile</a></li>
+				<li class="nav-item"><a class="nav-link" href="' . base_url() . 'index.php/connect">Connect</a></li>
+				<li class="nav-item"><a class="nav-link" href="' . base_url() . 'index.php/signout">Sign out</a></li>';
+			}else{
+				
+				echo '<li class="nav-item"><a class="nav-link" href="' . base_url() . 'index.php/create_profile">Create Profile</a></li>
+				<li class="nav-item"><a class="nav-link" href="' . base_url() . 'index.php/signin">Sign in</a></li>';
+			}
+		?>
 
 
-
-		    	</ul>
-		  	</div>
-		</nav> 
 
 
 	</div>
-	<div class="container">
+	<div><span onclick="openNav()" class="fa fa-bars" style="font-size:36px">&#9776;</span><a href="<?php echo base_url(); ?>">HobbyConnect</a></div>
+
+	<div class="container" id="container">

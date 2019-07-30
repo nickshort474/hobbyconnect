@@ -14,9 +14,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	
 	<?php 
 		if($this->session->logged_in){
-			echo '<a href="' . base_url() . 'index.php/show_profile" class="btn btn-primary">Show Profile</a><br /><a href="' . base_url() . 'index.php/signout" class="btn btn-primary">Sign out</a><br /><a href="' .  base_url()  . 'index.php/connect" class="btn btn-primary">Connect</a>';
+			echo '<a href="' . base_url() . 'index.php/show_profile" class="btn btn-dark">Show Profile</a><a href="' .  base_url()  . 'index.php/connect" class="btn btn-dark">Connect</a>';
 		}else{
-			echo '<a href="' . base_url() . 'index.php/create_profile" class="btn btn-primary">Create Profile</a><br /><a href="' . base_url() . 'index.php/signin" class="btn btn-primary">Sign In</a><br />';
+			echo '<a href="' . base_url() . 'index.php/create_profile" class="btn btn-dark">Create Profile</a><a href="' . base_url() . 'index.php/signin" class="btn btn-dark">Sign In</a>';
 		}
 
 
@@ -24,3 +24,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	
 	
 </div>
+

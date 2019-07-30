@@ -29,7 +29,8 @@
 				'email' => $this->input->post('email'),
 				'password' => $this->input->post('password'),
 				'general_location' => $this->input->post('general_location'),
-				'hobby' => $this->input->post('hobby')
+				'hobby' => $this->input->post('hobby'),
+				'about_me' => $this->input->post('about_me')
 
 			);
 
@@ -63,22 +64,52 @@
 
 
 		public function update_profile(){
-			$this->load->model('Profile_model');
 
+			//load profile model
+			$this->load->model('Profile_model');
+			$this->load->model('Hobby_model');
+
+			//create profile data array
 			$data = array(
 				'first_name' => $this->input->post('first_name'),
 				'last_name' => $this->input->post('last_name'),
 				'username' => $this->input->post('username'),
 				'email' => $this->input->post('email'),
 				'general_location' => $this->input->post('general_location'),
-				'hobby' => $this->input->post('hobby')
+				'hobby' => $this->input->post('hobby'),
+				'about_me' => $this->input->post('about_me')
 			);
 
+			//get old hobby from session for testing and removing from database
+			$oldHobby = $this->session->userdata('hobby');
+
+			//save new data to session for viewing of profile and database uploads
+			$this->session->set_userdata($data);
+
 			if($this->Profile_model->update($data)){
-				$this->load->view('header_view');
-				$this->load->view('thankyou_updating_profile_view');
-				$this->load->view('footer_view');
+				
+				//test if hobby has been changed
+				if($oldHobby !== $this->input->post('hobby')){
+				
+					if($this->Hobby_model->update($oldHobby)){
+						//load view
+						$this->load->view('header_view');
+						$this->load->view('thankyou_updating_profile_view');
+						$this->load->view('footer_view');
+				
+					}
+				
+				}else{
+					//load view
+					$this->load->view('header_view');
+					$this->load->view('thankyou_updating_profile_view');
+					$this->load->view('footer_view');
+				}
+				
 			}
+
+
+			
 		}
 
 

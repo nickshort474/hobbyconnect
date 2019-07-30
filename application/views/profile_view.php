@@ -40,15 +40,19 @@
 	echo form_label('General Location');
 	echo form_input(array('id'=>'general_location','name'=>'general_location','class'=>'form-control','value'=> $this->session->userdata('general_location')));
 	echo '<br />';
+	echo form_label('About me');
+	echo form_textarea(array('id'=>'about_me','name'=>'about_me','class'=>'form-control', 'rows'=>'4','value'=> $this->session->userdata('about_me')));
+	echo '<br />';
+
 	echo form_label('Hobby');
 	echo form_dropdown('hobby', $hobbiesArray, $this->session->userdata('hobby'),$dropDown);
 	echo '<br />';
 	
 	
-	echo form_submit(array('id'=>'update','value'=>'Update','class'=>'btn btn-primary', 'disabled'));
+	echo form_submit(array('id'=>'update','value'=>'Update','class'=>'btn btn-dark', 'disabled'));
 
 	echo '</div>';
-	echo '<div class="content">';
+	echo '<div class="contentSmall">';
 
 
 	if(null !== $this->session->userdata('profileImageSrc')){
@@ -63,5 +67,5 @@
 
 
 
-	<a href="<?php echo base_url() ?>index.php/Image_controller" class="btn btn-primary">Upload new picture</a>
+	<a href="<?php echo base_url() ?>index.php/Image_controller" class="btn btn-dark">Upload new picture</a>
 </div>

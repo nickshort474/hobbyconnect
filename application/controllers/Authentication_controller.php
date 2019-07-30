@@ -64,6 +64,7 @@
         			'profileImageSrc' => $row->profileImageSrc,
         			'general_location' => $row->general_location,
         			'hobby' => $row->hobby,
+        			'about_me' => $row->about_me,
        				'logged_in' => TRUE
 				);
 			}
@@ -77,11 +78,14 @@
 
 
 		public function sign_out(){
+			$this->session->userdata = array();
 			$this->session->sess_destroy();
 
 			$this->load->view('header_view');
 			$this->load->view('signout_view');
 			$this->load->view('footer_view');
+			
+			
 		}
 
 		
