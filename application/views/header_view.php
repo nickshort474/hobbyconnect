@@ -23,7 +23,7 @@
 				
 
 				echo '<li class="nav-item"><a class="nav-link" href="' . base_url() . 'index.php/show_profile">Show Profile</a></li>
-				<li class="nav-item"><a class="nav-link" href="' . base_url() . 'index.php/connect">Connect</a></li>
+				<li class="nav-item"><a class="nav-link" href="' . base_url() . 'index.php/connect">Connect</a></li><br />
 				<li class="nav-item"><a class="nav-link" href="' . base_url() . 'index.php/signout">Sign out</a></li>';
 			}else{
 				
@@ -36,6 +36,12 @@
 
 
 	</div>
-	<div><span onclick="openNav()" class="fa fa-bars" style="font-size:36px">&#9776;</span><a href="<?php echo base_url(); ?>">HobbyConnect</a></div>
+	<span onclick="openNav()" class="fa fa-bars"></span>
+	<div class="titleBlock">
+	
+		
+		<span ><a href="<?php echo base_url(); ?>" class="title">HobbyConnect</a></span>
+		
+	</div>
 
 	<div class="container" id="container">

@@ -16,7 +16,7 @@
 	echo form_input(array('id'=>'email','name'=>'email','class'=>'form-control'));
 	echo '<br />';
 	echo form_label('password');
-	echo form_input(array('id'=>'password','name'=>'password','class'=>'form-control'));
+	echo form_password(array('id'=>'password','name'=>'password','class'=>'form-control'));
 	echo '<br />';
 	echo form_submit(array('id'=>'submit','value'=>'Sign in','class'=>'btn btn-dark'));
 

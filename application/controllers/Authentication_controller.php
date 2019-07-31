@@ -5,6 +5,7 @@
 		function __construct(){
 			parent::__construct();
 			$this->load->database();
+
 		}
 
 		public function index(){
@@ -48,12 +49,14 @@
 				$this->startSession($return);
 			}
 		
-			
-
 		}
 
 		public function startSession($return){
 			
+			$this->load->model('Request_model');
+
+
+
 			foreach ($return['signin'] as $row) {
 				$newdata = array(
         			'username'  => $row->username,
@@ -67,7 +70,15 @@
         			'about_me' => $row->about_me,
        				'logged_in' => TRUE
 				);
+
+				$username = $row->username;
 			}
+
+			
+
+			$requestArray = $this->Request_model->get_requests($username);
+
+			$newdata['requests'] = $requestArray;
 
 			$this->session->set_userdata($newdata);
 

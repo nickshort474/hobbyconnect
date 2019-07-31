@@ -1,10 +1,13 @@
 <div class="content">
 	<h2>Request connection</h2><br />
-	<form action="post" action="">
-		<label html="message" >Message</label>
-		<textarea name="message" class="form-control" rows="3" cols="28"></textarea>
+	<form method="post" action="<?php echo base_url() ?>index.php/Request_Controller/send_request">
+		<label html="message" >Message to <?php echo $id ?></label>
+		
+		<textarea name="message" class="form-control" rows="3" cols="28" placeholder="Hi there <?php echo $id ?> would you like to connect?"></textarea>
+		<input type="hidden" value="<?php echo $id ?>" name="username">
+		<button type="submit" id="submit" class="btn btn-dark">Send Request</a>
 	</form>
-	<a href="<?php echo base_url() ?>index.php/Request_Controller/send_request">Send Request</a>
+	
 
 
 </div>
