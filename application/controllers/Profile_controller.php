@@ -57,6 +57,8 @@
 			$query = $this->db->get('hobby_list');
 			$hobbiesArray['hobbies'] = $query->result();
 
+			/*$this->session->set_userdata($hobbieArray);*/
+
 			$this->load->view('header_view');
 			$this->load->view('profile_view',$hobbiesArray);
 			$this->load->view('footer_view');

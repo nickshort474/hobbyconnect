@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<p>Want to find a knitting group to share your passion with?</p>
 	<p>Need a scuba buddy to help you explore the seven seas?</p>
 	<br />
-	<p>You can find people who share your passions and pasttimes here at HobbyConnect</p>
+	<p>You can find people who share your passions and pasttimes here at PeopleFinder</p>
 	
 	<?php 
 		if($this->session->logged_in){

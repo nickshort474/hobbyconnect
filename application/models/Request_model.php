@@ -21,7 +21,7 @@
 
 		public function get_requests($username){
 			
-			$this->db->where('message_from', $username);
+			$this->db->where('message_to', $username);
 			$query = $this->db->get('requests');
 			if($query){
 				return $query->result();
@@ -29,6 +29,10 @@
 				return 'no data';
 			}
 			
+		}
+
+		public function delete_requests(){
+
 		}
 
 

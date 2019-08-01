@@ -27,9 +27,9 @@
 			return $profileArray;
 		}
 
-		public function get_individual_profile($id){
+		public function get_individual_profile($username){
 			
-			$this->db->where('userID',$id);
+			$this->db->where('username',$username);
 			$query = $this->db->get('profile');
 			return $query->result();
 

@@ -87,11 +87,11 @@
 
 
 
-		public function show_user($id){
+		public function show_user($username){
 
 			
 			
-			$result['profileData'] = $this->Connect_model->get_individual_profile($id);
+			$result['profileData'] = $this->Connect_model->get_individual_profile($username);
 
 			$this->load->view('header_view');
 			$this->load->view('user_profile_view',$result);

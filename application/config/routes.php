@@ -63,5 +63,8 @@ $route['signout'] = 'Authentication_controller/sign_out';
 $route['connect'] = 'Connect_controller';
 $route['show_user'] = 'Connect_controller/show_user';
 
+$route['messages'] = 'Request_controller';
+$route['reply'] = 'Request_controller/reply';
+
 
 $route['add'] = 'Add_controller';

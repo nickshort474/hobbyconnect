@@ -23,7 +23,7 @@
 			echo '<p>Location: ' . $user->general_location . '</p><br />';
 				
 					
-			echo '<a href="' . base_url() . 'index.php/Connect_controller/show_user/' . $user->userID . '" class="btn btn-dark showUserBtn" >Show User</a>';
+			echo '<a href="' . base_url() . 'index.php/Connect_controller/show_user/' . $user->username . '" class="btn btn-dark showUserBtn" >Show User</a>';
 			echo '</div>';
 			echo '</div>';
 

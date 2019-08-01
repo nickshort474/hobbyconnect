@@ -32,8 +32,9 @@
 			}else{
 
 				$data = array('upload_data' => $this->upload->data());
+
 				$this->load->view('header_view');
-				$this->load->view('upload_success_view', $data);
+				$this->load->view('upload_success_view');
 				$this->load->view('footer_view');
 
 				$this->uploadImageRef($data);

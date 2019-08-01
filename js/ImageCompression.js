@@ -1,25 +1,7 @@
-
-let sideNav = document.getElementById("sideNav");
-let container = document.getElementById("container");
-
-function openNav(){
-
-	sideNav.style.width = '200px';
-	document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-	//container.style.marginLeft = '200px';
-}
-
-function closeNav(){
-	sideNav.style.width = '0px';
-	document.body.style.backgroundColor = "rgba(0,0,0,1)";
-	//container.style.marginLeft = '200px';
-}
-
-
-function compressImage(image, callback){
-	  
+const  _compressImage = (image, size, callback) =>{
+	    
     //set width from passed value
-	const width = '250px';
+	const width = size;
 
 	//create new image object
 	const img = new Image();
@@ -48,7 +30,7 @@ function compressImage(image, callback){
 		//once promise has resolved send blob back to calling component
 		returnedFile.then((blob)=>{
 			
-			callback(blob);
+			callback(blob)
 		})
 		
 		
@@ -71,5 +53,4 @@ function createBlob(ctx){
 	})
 }
 
-
-
+exports._compressImage = _compressImage; 

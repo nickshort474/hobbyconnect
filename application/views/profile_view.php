@@ -56,7 +56,7 @@
 
 
 	if(null !== $this->session->userdata('profileImageSrc')){
-		echo '<img src="' . base_url() . 'uploads/' . $this->session->userdata("profileImageSrc") . '" class="profileImage" /><br />';
+		echo '<img src="' . base_url() . 'uploads/' . $this->session->userdata("profileImageSrc") . '" class="profileViewImage" /><br />';
 	}
 
 

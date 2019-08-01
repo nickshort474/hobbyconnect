@@ -7,7 +7,7 @@
 <script>
 	
 	
-
+/*
 		let sideNav = document.getElementById("sideNav");
 		let container = document.getElementById("container");
 		
@@ -24,8 +24,9 @@
 			//container.style.marginLeft = '200px';
 		}
 	
-
+*/	
 
 	
 </script>
+<script type="text/javascript" src="<?php echo base_url(); ?>js/custom.js"></script>
 </html>
