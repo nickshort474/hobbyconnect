@@ -35,10 +35,18 @@
 
 			if($this->session->logged_in == 1){
 				
+				
+
 				echo '<li class="nav-item"><a class="nav-link" href="' . base_url() . 'index.php/show_profile">Show Profile</a></li>';
 				echo '<li class="nav-item"><a class="nav-link" href="' . base_url() . 'index.php/connect">Connect</a></li>';
 				
-				echo '<li class="nav-item"><a class="nav-link" href="' . base_url() . 'index.php/messages">Messages: ' . count($this->session->userdata('requests')) . '</a></li><br /><br />';
+				if($this->session->userdata('requests')){
+					
+					echo '<li class="nav-item"><a class="nav-link" href="' . base_url() . 'index.php/messages">Messages: ' . $count = count($this->session->userdata('requests')) . '</a></li><br /><br />';
+				}else{
+					echo '<br /><br />';
+				}
+
 				echo '<li class="nav-item"><a class="nav-link" href="' . base_url() . 'index.php/signout">Sign out</a></li>';
 			}else{
 				

@@ -9,6 +9,12 @@
 
 		public function insert($data){
 			if($this->db->insert('profile',$data)){
+				
+				//get id of newly created entry 
+				$data['userID'] = $this->db->insert_id();
+
+				//save to session
+				$this->session->set_userdata($data);
 				return true;
 			}
 		}
@@ -25,7 +31,7 @@
 			if($result){
 
 				$this->db->where('email', $data['email']);
-				$this->db->where('password', $data['password']);
+				$this->db->where('pass_word', $data['pass_word']);
 				$query2 = $this->db->get('profile');
 				$result2 = $query2->result();
 				
@@ -81,8 +87,6 @@
 
 			if($this->db->update('profile',$data)){
 				
-				
-
 				return true;
 			}
 		}

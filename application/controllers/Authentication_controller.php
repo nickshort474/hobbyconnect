@@ -5,7 +5,7 @@
 		function __construct(){
 			parent::__construct();
 			$this->load->database();
-
+			$this->load->library('form_validation');
 		}
 
 		public function index(){
@@ -21,34 +21,43 @@
 			
 			$this->load->model('Profile_model');
 
-			$data = array(
-				
-				'email' => $this->input->post('email'),
-				'password' => $this->input->post('password')
+			$this->form_validation->set_rules('email', 'Email', 'required'); 
+			$this->form_validation->set_rules('pass_word', 'Password', 'required');
 
-			);
-
-			$return['signin'] = $this->Profile_model->get($data);
-			
-			if($return['signin'] === 'no email'){
-
-				$error['error'] = 'Email not recognized';
-
+			if($this->form_validation->run() ==  FALSE) {
 				$this->load->view('header_view');
-				$this->load->view('signin_view',$error);
-				$this->load->view('footer_view');
-
-			}elseif($return['signin'] === 'incorrect password'){
-				$error['error'] = 'Email and password do not match';
-
-				$this->load->view('header_view');
-				$this->load->view('signin_view',$error);
-				$this->load->view('footer_view');
-
+		        $this->load->view('signin_view');
+		        $this->load->view('footer_view');
 			}else{
-				$this->startSession($return);
+				$data = array(
+				
+					'email' => $this->input->post('email'),
+					'pass_word' => $this->input->post('pass_word')
+
+				);
+
+				$return['signin'] = $this->Profile_model->get($data);
+				
+				if($return['signin'] === 'no email'){
+
+					$error['error'] = 'Email not recognized';
+
+					$this->load->view('header_view');
+					$this->load->view('signin_view',$error);
+					$this->load->view('footer_view');
+
+				}elseif($return['signin'] === 'incorrect password'){
+					$error['error'] = 'Email and password do not match';
+
+					$this->load->view('header_view');
+					$this->load->view('signin_view',$error);
+					$this->load->view('footer_view');
+
+				}else{
+					$this->startSession($return);
+				}
+
 			}
-		
 		}
 
 		public function startSession($return){
