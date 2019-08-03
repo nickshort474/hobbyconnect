@@ -69,15 +69,15 @@
 
 			foreach ($return['signin'] as $row) {
 				$newdata = array(
-        			'username'  => $row->username,
-        			'email'     => $row->email,
-        			'first_name' => $row->first_name,
-        			'last_name' => $row->last_name,
-        			'userID' => $row->userID,
-        			'profileImageSrc' => $row->profileImageSrc,
-        			'general_location' => $row->general_location,
-        			'hobby' => $row->hobby,
-        			'about_me' => $row->about_me,
+        			'username'  => html_escape($row->username),
+        			'email'     => html_escape($row->email),
+        			'first_name' => html_escape($row->first_name),
+        			'last_name' => html_escape($row->last_name),
+        			'userID' => html_escape($row->userID),
+        			'profileImageSrc' => html_escape($row->profileImageSrc),
+        			'general_location' => html_escape($row->general_location),
+        			'hobby' => html_escape($row->hobby),
+        			'about_me' => html_escape($row->about_me),
        				'logged_in' => TRUE
 				);
 
@@ -109,7 +109,43 @@
 			
 		}
 
-		
+		public function change_password(){
+			$this->load->view('header_view');
+			$this->load->view('change_password_view');
+			$this->load->view('footer_view');
+		}
+
+		public function update_password(){
+
+			$this->form_validation->set_rules('old_password', 'Old password', 'required');
+			$this->form_validation->set_rules('new_password', 'New password', 'required');
+			$this->form_validation->set_rules('confirm_password', 'Confirm new password', 'required|matches[new_password]');
+
+			if($this->form_validation->run() == FALSE){
+				$this->load->view('header_view');
+				$this->load->view('change_password_view');
+				$this->load->view('footer_view');
+			}else{
+
+				$oldPassword = $this->input->post('old_password');
+				$newPassword = $this->input->post('new_password');
+				$confirmPassword = $this->input->post('confirm_password');
+
+				$data = array(
+					'old_password' => $oldPassword,
+					'new_password' => $newPassword
+
+				);
+
+
+				//$this->profile_model->
+
+				$this->load->view('header_view');
+				$this->load->view('password_updated_view');
+				$this->load->view('footer_view');
+			}
+			
+		}
 
 		
 

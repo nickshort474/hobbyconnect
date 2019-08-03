@@ -2,7 +2,7 @@
 
 <?php
 	foreach($signin as $user){
-		echo "Welcome " . $user->first_name;
+		echo "Welcome " . html_escape($user->first_name);
 	}
 
 ?>

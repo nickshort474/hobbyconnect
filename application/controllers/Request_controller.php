@@ -71,6 +71,8 @@
 
 			$result['insert'] = $this->Request_model->send_request_message($data);
 
+			$this->get_requests();
+
 			$this->load->view('header_view');
 			$this->load->view('reply_sent_view');
 			$this->load->view('footer_view');
@@ -80,15 +82,25 @@
 
 			$this->Request_model->delete_message($id);
 		
+			/*$requestArray =  $this->Request_model->get_requests($this->session->userdata('username'));
+
+			$newdata['requests'] = $requestArray;
+
+			$this->session->set_userdata($newdata);*/
+
+			$this->get_requests();
+
+			$this->load->view('header_view');
+			$this->load->view('message_view');
+			$this->load->view('footer_view');
+		}
+
+		function get_requests(){
 			$requestArray =  $this->Request_model->get_requests($this->session->userdata('username'));
 
 			$newdata['requests'] = $requestArray;
 
 			$this->session->set_userdata($newdata);
-
-			$this->load->view('header_view');
-			$this->load->view('message_view');
-			$this->load->view('footer_view');
 		}
 
 

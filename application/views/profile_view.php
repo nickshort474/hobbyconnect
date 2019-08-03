@@ -5,14 +5,14 @@
 	if(isset($hobbies)){
 		foreach($hobbies as $hobby){
 			
-			$hobbiesArray = array_push_assoc($hobbiesArray,$hobby->name,$hobby->name);
+			$hobbiesArray = array_push_assoc($hobbiesArray,$hobby->hobby_table_name,$hobby->hobby_name);
 			
 		};
 	}else{
 		//coming back from form_validation error
 		foreach($this->session->userdata('hobbies') as $hobby){
 			
-			$hobbiesArray = array_push_assoc($hobbiesArray,$hobby->name,$hobby->name);
+			$hobbiesArray = array_push_assoc($hobbiesArray,$hobby->hobby_table_name,$hobby->hobby_name);
 			
 		};
 	}
@@ -77,4 +77,8 @@
 
 
 	<a href="<?php echo base_url() ?>index.php/Image_controller" class="btn btn-dark">Upload new picture</a>
+	
+</div>
+<div class="content">
+	<a href="<?php echo base_url() ?>index.php/Authentication_controller/change_password" class="btn btn-dark">Change password</a>
 </div>

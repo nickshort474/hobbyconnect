@@ -17,7 +17,7 @@
 	
 		
 	foreach($locations as $location){
-		$locationsArray = array_push_assoc($locationsArray, $location->location, $location->location);
+		$locationsArray = array_push_assoc($locationsArray, html_escape($location->location), html_escape($location->location));
 	}
 	
 	function array_push_assoc($array, $key, $value){

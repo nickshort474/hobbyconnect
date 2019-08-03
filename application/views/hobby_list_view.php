@@ -11,7 +11,7 @@
 	if(isset($hobbies)){
 		foreach($hobbies as $hobby){
 			
-			$hobbiesArray = array_push_assoc($hobbiesArray,$hobby->name,$hobby->name);
+			$hobbiesArray = array_push_assoc($hobbiesArray, html_escape($hobby->hobby_table_name), html_escape($hobby->hobby_name));
 			
 		};
 	}

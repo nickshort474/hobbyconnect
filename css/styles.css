@@ -51,7 +51,7 @@ h2{
 .content {
 	width:80%;
  	margin: auto;
- 	margin-top:50px;
+ 	margin-top:25px;
  	padding:10px;
 	border: 1px solid #D0D0D0;
 	box-shadow: 0 0 8px #D0D0D0;
@@ -62,7 +62,8 @@ h2{
 
 .contentSmall {
 	margin: auto;
-	margin-bottom:25px;
+	margin-top:10px;
+	margin-bottom:10px;
  	padding:10px;
 	border: 1px solid #D0D0D0;
 	box-shadow: 0 0 8px #D0D0D0;
@@ -259,13 +260,29 @@ a:hover{
 
 /* Message_view */
 
-.messageBox{
+.messageBoxOwn{
 	border:1px solid white;
 	text-align:left;
 	padding:15px;
 	margin:10px;
+	margin-left:35px;
 	box-shadow: 0px 0px 5px white;
+	background-color:green;
+
 }
+
+.messageBoxOther{
+	color:black;
+	text-shadow: none;
+	border:1px solid white;
+	text-align:left;
+	padding:15px;
+	margin:10px;
+	margin-right:35px;
+	box-shadow: 0px 0px 5px white;
+	background-color:white;
+}
+
 
 .pushRight{
 	text-align:right;
@@ -288,6 +305,18 @@ a:hover{
   .sideNav a{
   	font-size: 18px;
   }
+
+  body{
+  	font-size:14px;
+  }
+
+  a.btn.btn-dark{
+  	padding:5px;
+  	width:35px;
+  	text-align:center;
+  	font-size:12px;
+  }
+
 }
 
 @media screen and (max-width: 1250px) {
@@ -318,4 +347,19 @@ a:hover{
 		width:100%;
 	}
 
+}
+
+
+/* tooltips for fa fa icons */
+
+.fa.fa-send{
+	font-size:18px;
+}
+
+.fa.fa-user-circle{
+	font-size:18px;
+}
+
+.fa.fa-times-circle{
+	font-size:18px;
 }

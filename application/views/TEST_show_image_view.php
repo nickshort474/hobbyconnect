@@ -10,5 +10,5 @@
 
 		
 	?>
-	<img src="<?php echo base_url() . 'uploads/' . $imageSrc ?>" />
+	<img src="<?php echo base_url() . 'uploads/' .  html_escape($imageSrc) ?>" />
 </div>

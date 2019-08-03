@@ -13,7 +13,7 @@
 
 			echo '<div class="userBox">';
 			if(isset($user->profileImageSrc)){
-				echo '<img src="' . base_url() .	'/uploads/'. $user->profileImageSrc .'"width="200px" class="peopleListingImage" />';
+				echo '<img src="' . base_url() .	'/uploads/'.  html_escape($user->profileImageSrc) .'"width="200px" class="peopleListingImage" />';
 			}else{
 				echo '<img src="' . base_url() .	'/assets/default.png" width="200px" class="peopleListingImage" />';
 			}
@@ -22,14 +22,14 @@
 			if($user->username == $this->session->userdata('username')){
 				echo '<h4>This is you!</h4>';
 			}else{
-				echo '<h4>' . $user->first_name . '</h4>';
+				echo '<h4>' .  html_escape($user->first_name) . '</h4>';
 			}
 			
-			echo '<p>Username: ' . $user->username . '</p>';
-			echo '<p>Location: ' . $user->general_location . '</p><br />';
+			echo '<p>Username: ' .  html_escape($user->username) . '</p>';
+			echo '<p>Location: ' .  html_escape($user->general_location) . '</p><br />';
 				
 					
-			echo '<a href="' . base_url() . 'index.php/Connect_controller/show_user/' . $user->username . '" class="btn btn-dark showUserBtn" >Show User</a>';
+			echo '<a href="' . base_url() . 'index.php/Connect_controller/show_user/' .  html_escape($user->username) . '" class="btn btn-dark showUserBtn" >Show User</a>';
 			echo '</div>';
 			echo '</div>';
 

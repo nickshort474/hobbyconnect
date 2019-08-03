@@ -22,6 +22,9 @@
 		public function get_requests($username){
 			
 			$this->db->where('message_to', $username);
+			$this->db->or_where('message_from', $username);
+			$this->db->order_by('date_created');
+
 			$query = $this->db->get('requests');
 			if($query){
 				return $query->result();
