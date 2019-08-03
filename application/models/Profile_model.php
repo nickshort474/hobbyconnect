@@ -19,6 +19,7 @@
 			}
 		}
 
+
 		public function get($data){
 			
 			
@@ -26,26 +27,26 @@
 			$query = $this->db->get('profile');
 			$result = $query->result();
 			
-
+			
 
 			if($result){
 
-				$this->db->where('email', $data['email']);
-				$this->db->where('pass_word', $data['pass_word']);
-				$query2 = $this->db->get('profile');
-				$result2 = $query2->result();
-				
-				if($result2){
-					return $result2;
+				foreach($result as $item){
+					$hash = $item->pass_word;
+				}
+
+				if(password_verify($data['pass_word'], $hash)){
+					return $result;
 				}else{
 					return 'incorrect password';
 				}
-
+			
 			}else{
 				return 'no email';
 			}
 
 		}
+
 
 		public function insertIntoHobby($username,$location,$hobby){
 

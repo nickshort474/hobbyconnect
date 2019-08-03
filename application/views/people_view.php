@@ -18,7 +18,13 @@
 				echo '<img src="' . base_url() .	'/assets/default.png" width="200px" class="peopleListingImage" />';
 			}
 			echo '<div class="userInfo">';
-			echo '<h4>' . $user->first_name . '</h4>';
+
+			if($user->username == $this->session->userdata('username')){
+				echo '<h4>This is you!</h4>';
+			}else{
+				echo '<h4>' . $user->first_name . '</h4>';
+			}
+			
 			echo '<p>Username: ' . $user->username . '</p>';
 			echo '<p>Location: ' . $user->general_location . '</p><br />';
 				

@@ -29,6 +29,7 @@
 		        $this->load->view('signin_view');
 		        $this->load->view('footer_view');
 			}else{
+				
 				$data = array(
 				
 					'email' => $this->input->post('email'),

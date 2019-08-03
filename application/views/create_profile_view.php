@@ -54,7 +54,7 @@
 	echo form_label('Hobby');
 	echo form_dropdown('hobby', $hobbiesArray, 'surfing',$dropDown);
 	echo '<br />';
-	echo form_submit(array('id'=>'submit','value'=>'add','class'=>'btn btn-primary'));
+	echo form_submit(array('id'=>'submit','value'=>'add','class'=>'btn btn-dark'));
 
 	echo '</div>'
 

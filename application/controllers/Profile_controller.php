@@ -46,7 +46,7 @@
 					'last_name' => $this->input->post('last_name'),
 					'username' => $this->input->post('username'),
 					'email' => $this->input->post('email'),
-					'pass_word' => $this->input->post('pass_word'),
+					'pass_word' => password_hash($this->input->post('pass_word'),PASSWORD_DEFAULT ),
 					'general_location' => $this->input->post('general_location'),
 					'hobby' => $this->input->post('hobby'),
 					'about_me' => $this->input->post('about_me')
@@ -177,6 +177,8 @@
             }
 	
 		}
+
+		
 
 
 	}

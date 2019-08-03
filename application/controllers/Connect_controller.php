@@ -79,6 +79,13 @@
 			//assign result of get_ids function to result array
 			$result['profile_list'] = $this->Connect_model->get_ids($location);
 
+			//save ref to current page to session for back button as next page has multiple entry points
+			$data = array(
+				"current_page" => "index.php/Connect_controller/show_people"
+			);
+
+			$this->session->set_userdata($data);
+
 			//load views
 			$this->load->view('header_view');
 			$this->load->view('people_view',$result);
@@ -98,10 +105,7 @@
 			$this->load->view('footer_view');
 		}
 
-		public function send_request(){
-
-		}
-
+		
 	}
 
 ?>

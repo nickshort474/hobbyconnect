@@ -31,8 +31,9 @@
 			
 		}
 
-		public function delete_requests(){
-
+		public function delete_message($id){
+			$this->db->where('id', $id);
+			$this->db->delete('requests');
 		}
 
 
