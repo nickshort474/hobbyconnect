@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		if($this->session->logged_in){
 			echo '<a href="' . base_url() . 'index.php/show_profile" class="btn btn-dark">Show Profile</a><a href="' .  base_url()  . 'index.php/connect" class="btn btn-dark">Connect</a>';
 		}else{
-			echo '<a href="' . base_url() . 'index.php/create_profile" class="btn btn-dark">Create Profile</a><a href="' . base_url() . 'index.php/signin" class="btn btn-dark">Sign In</a>';
+			echo '<a href="' . base_url() . 'index.php/create_account" class="btn btn-dark">Create Account</a><a href="' . base_url() . 'index.php/signin" class="btn btn-dark">Sign In</a>';
 		}
 
 

@@ -25,15 +25,13 @@
 
 		public function create(){
 			
-			
-			$this->form_validation->set_rules('first_name', 'First Name', 'required'); 
-			$this->form_validation->set_rules('last_name', 'Last Name', 'required');
-			$this->form_validation->set_rules('username', 'Username',  'required|callback_username_check');
 			$this->form_validation->set_rules('email', 'Email',  'required|callback_email_check');
 			$this->form_validation->set_rules('pass_word', 'Password',  'required');
+			$this->form_validation->set_rules('pass_word_confirm', 'Confirm password',  'required|matches[pass_word]');
+			$this->form_validation->set_rules('username', 'Username',  'required|callback_username_check');
 			$this->form_validation->set_rules('general_location', 'General Location',  'required');
 			$this->form_validation->set_rules('hobby', 'Hobby',  'required');
-			$this->form_validation->set_rules('about_me', 'About Me',  'required');
+			
 
 			if ($this->form_validation->run() == FALSE){
 				$this->load->view('header_view');
@@ -43,7 +41,6 @@
             else{
                 $data = array(
 					'first_name' => $this->input->post('first_name'),
-					'last_name' => $this->input->post('last_name'),
 					'username' => $this->input->post('username'),
 					'email' => $this->input->post('email'),
 					'pass_word' => password_hash($this->input->post('pass_word'),PASSWORD_DEFAULT ),
@@ -54,7 +51,7 @@
 				);
 				if($this->Profile_model->insert($data)){
 				
-					/* Save username and their location to the listed hobby table */
+					// Save username and their location to the listed hobby table 
 					$this->Profile_model->insertIntoHobby($this->input->post('username'), $this->input->post('general_location'),$this->input->post('hobby') );
 
 					//"log" user in after profile created
@@ -120,14 +117,11 @@
 
 			//load  model
 			$this->load->model('Hobby_model');
-
-			$this->form_validation->set_rules('first_name', 'First Name', 'required'); 
-			$this->form_validation->set_rules('last_name', 'Last Name', 'required');
-			$this->form_validation->set_rules('username', 'Username',  'required');
 			$this->form_validation->set_rules('email', 'Email',  'required');
-			$this->form_validation->set_rules('general_location', 'General Location',  'required');
+			$this->form_validation->set_rules('username', 'Username',  'required');
 			$this->form_validation->set_rules('hobby', 'Hobby',  'required');
-			$this->form_validation->set_rules('about_me', 'About Me',  'required');
+			$this->form_validation->set_rules('general_location', 'General Location',  'required');
+		
 
 			if ($this->form_validation->run() == FALSE){
 				$this->load->view('header_view');
@@ -136,8 +130,6 @@
             }else{
             	//create profile data array
 				$data = array(
-					'first_name' => $this->input->post('first_name'),
-					'last_name' => $this->input->post('last_name'),
 					'username' => $this->input->post('username'),
 					'email' => $this->input->post('email'),
 					'general_location' => $this->input->post('general_location'),

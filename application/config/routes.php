@@ -53,11 +53,13 @@ $route['default_controller'] = 'Welcome_controller';
 $route['404_override'] = 'FourOhFour_controller';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['create_profile'] = 'Profile_controller';
+$route['create_account'] = 'Profile_controller';
 $route['update_profile'] = 'Profile_controller/update_profile';
 $route['show_profile'] = 'Profile_controller/show_profile';
 
 $route['signin'] = 'Authentication_controller';
+$route['signup'] = 'Authentication_controller/sign_up';
+$route['signup_confirm'] = 'Authentication_controller/signup_confirm';
 $route['signout'] = 'Authentication_controller/sign_out';
 
 $route['connect'] = 'Connect_controller';
@@ -68,3 +70,9 @@ $route['reply'] = 'Request_controller/reply';
 
 
 $route['add'] = 'Add_controller';
+
+
+$route['other'] = 'Other_controller';
+$route['report'] = 'Other_controller/report';
+$route['contact'] = 'Other_controller/contact';
+$route['send_contact'] = 'Other_controller/send_contact';

@@ -1,13 +1,6 @@
-<div class="content"><p>
+<div class="content">
 
-<?php
-	foreach($signin as $user){
-		echo "Welcome " . html_escape($user->first_name);
-	}
-
-?>
-
-, you are now signed in</p>
+<p>Welcome you are now signed in.</p>
 <p>Where would you like to go next?</p>
 
 

@@ -6,6 +6,7 @@
 			parent::__construct();
 			$this->load->database();
 			$this->load->library('form_validation');
+			$this->load->model('Profile_model');
 		}
 
 		public function index(){
@@ -15,7 +16,7 @@
 			$this->load->view('footer_view');
 		}
 
-
+	
 
 		public function signin(){
 			
@@ -71,8 +72,6 @@
 				$newdata = array(
         			'username'  => html_escape($row->username),
         			'email'     => html_escape($row->email),
-        			'first_name' => html_escape($row->first_name),
-        			'last_name' => html_escape($row->last_name),
         			'userID' => html_escape($row->userID),
         			'profileImageSrc' => html_escape($row->profileImageSrc),
         			'general_location' => html_escape($row->general_location),

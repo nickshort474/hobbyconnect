@@ -34,17 +34,14 @@
 
 	echo form_open('Profile_controller/update_profile');
 	echo validation_errors();
-	echo form_label('First Name');
-	echo form_input(array('id'=>'first_name','name'=>'first_name','class'=>'form-control','value'=> $this->session->userdata('first_name') ));
-	echo '<br />';
-	echo form_label('Last Name');
-	echo form_input(array('id'=>'last_name','name'=>'last_name','class'=>'form-control','value'=> $this->session->userdata('last_name')));
-	echo '<br />';
 	echo form_label('Username');
 	echo form_input(array('id'=>'username','name'=>'username','class'=>'form-control','value'=> $this->session->userdata('username')));
 	echo '<br />';
 	echo form_label('Email');
 	echo form_input(array('id'=>'email','name'=>'email','class'=>'form-control','value'=> $this->session->userdata('email')));
+	echo '<br />';
+	echo form_label('Hobby');
+	echo form_dropdown('hobby', $hobbiesArray, $this->session->userdata('hobby'),$dropDown);
 	echo '<br />';
 	echo form_label('General Location');
 	echo form_input(array('id'=>'general_location','name'=>'general_location','class'=>'form-control','value'=> $this->session->userdata('general_location')));
@@ -53,9 +50,7 @@
 	echo form_textarea(array('id'=>'about_me','name'=>'about_me','class'=>'form-control', 'rows'=>'4','value'=> $this->session->userdata('about_me')));
 	echo '<br />';
 
-	echo form_label('Hobby');
-	echo form_dropdown('hobby', $hobbiesArray, $this->session->userdata('hobby'),$dropDown);
-	echo '<br />';
+	
 	
 	
 	echo form_submit(array('id'=>'update','value'=>'Update','class'=>'btn btn-dark', 'disabled'));

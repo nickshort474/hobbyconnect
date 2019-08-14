@@ -15,6 +15,7 @@
 		public function index(){
 
 			//create query to get hobby list
+			$query = $this->db->order_by('hobby_name','ASC');
 			$query = $this->db->get('hobby_list');
 
 			//assign result to array
