@@ -25,6 +25,11 @@
 		}
 
 		public function send_contact(){
+
+			
+			
+
+
 			$this->load->view('header_view');
 			$this->load->view('contact_sent_view');
 			$this->load->view('footer_view');

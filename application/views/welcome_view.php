@@ -25,3 +25,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	
 </div>
 
+
+<div class="content">
+	<h2><em>Lastest users</em></h2>
+	<hr class="hr" />
+	<div id="userProfile">
+		<h3>Missy24</h3>
+		<img src="uploads/default.png" class="profileImage" /><br />
+		<div class="profileInfo">
+			<p><span class="profileTitles">AKA:</span> Missy Elliot </p>
+			<p><span class="profileTitles">Location:</span> Colchester </p>
+			<p><span class="profileTitles">Hobby:</span> Rock Climbing</p>
+			<p><span class="profileTitles">Bio:</span> Love rock climbing, would love to meet others who share my passion! </p>
+		</div>		
+	</div>
+	
+</div>
+

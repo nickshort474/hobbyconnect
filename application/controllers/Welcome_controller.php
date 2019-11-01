@@ -9,8 +9,6 @@ class Welcome_controller extends CI_Controller {
 	}
 
 	public function index(){
-		
-
 		$this->load->view('header_view');
 		$this->load->view('welcome_view');
 		$this->load->view('footer_view');

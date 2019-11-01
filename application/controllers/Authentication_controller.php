@@ -5,6 +5,7 @@
 		function __construct(){
 			parent::__construct();
 			$this->load->database();
+			$this->load->library('email');
 			$this->load->library('form_validation');
 			$this->load->model('Profile_model');
 		}
@@ -143,6 +144,39 @@
 				$this->load->view('password_updated_view');
 				$this->load->view('footer_view');
 			}
+			
+		}
+
+		public function forgotten_password(){
+			$this->load->view('header_view');
+			$this->load->view('forgotten_password_view');
+			$this->load->view('footer_view');
+		}
+
+		public function send_password_email(){
+			
+			
+			$emailTo = 'nathanshelton515@gmail.com';
+
+			$this->email->set_mailtype("html");	
+
+			$this->email->from('admin@PeopleFinder.world', 'PeopleFinder');
+			$this->email->reply_to($emailTo);
+			$this->email->to($this->input->post('email'));
+
+			$this->email->subject('Password reset');
+			$this->email->message('Please follow this link to reset your email <a href="https://PeopleFinder.world/">Reset</a>');
+			
+
+			if($this->email->send()){
+				$this->load->view('header_view');
+				$this->load->view('password_reset_success_view');
+				$this->load->view('footer_view');
+			
+			};
+
+
+
 			
 		}
 

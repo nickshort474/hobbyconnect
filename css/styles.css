@@ -351,3 +351,11 @@ li{
 }
 
 
+
+
+.hr{
+	color:white;
+	height:2px;
+	background: #fff;
+	width:25%;
+}

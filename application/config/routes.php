@@ -61,6 +61,7 @@ $route['signin'] = 'Authentication_controller';
 $route['signup'] = 'Authentication_controller/sign_up';
 $route['signup_confirm'] = 'Authentication_controller/signup_confirm';
 $route['signout'] = 'Authentication_controller/sign_out';
+$route['forgotten_password'] = 'Authentication_controller/forgotten_password';
 
 $route['connect'] = 'Connect_controller';
 $route['show_user'] = 'Connect_controller/show_user';
